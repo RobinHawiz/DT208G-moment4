@@ -33,6 +33,14 @@ export class HomeComponent {
 
   constructor(private courseService: CourseService) {}
 
+  private alphabetizeBy(prop: keyof Course) {
+    const courses = this.courses();
+    if (!courses) return;
+
+    const sorted = [...courses].sort((a, b) => alphabetize(a[prop], b[prop]));
+    this.courses.set(sorted);
+  }
+
   ngOnInit() {
     this.isLoading.set(true);
     this.courseService.getCourses().subscribe({
@@ -50,14 +58,14 @@ export class HomeComponent {
   }
 
   alphabetizeCourseCode(): void {
-    this.courses()?.sort((a, b) => alphabetize(a.code, b.code));
+    this.alphabetizeBy('code');
   }
 
   alphabetizeCourseName(): void {
-    this.courses()?.sort((a, b) => alphabetize(a.coursename, b.coursename));
+    this.alphabetizeBy('coursename');
   }
 
   alphabetizeCourseProgression(): void {
-    this.courses()?.sort((a, b) => alphabetize(a.progression, b.progression));
+    this.alphabetizeBy('progression');
   }
 }
