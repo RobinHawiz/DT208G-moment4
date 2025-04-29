@@ -1,0 +1,102 @@
+@use "abstracts/variables" as v;
+
+// Layout
+
+main {
+  h1 {
+    margin-bottom: 2rem;
+    padding-top: 3rem;
+  }
+  .input-box {
+    input[type="text"] {
+      margin-top: 0.5rem;
+      margin-bottom: 3rem;
+    }
+  }
+  input[type="text"] {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border-radius: 0.2rem;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    th {
+      text-align: left;
+      padding-bottom: 2rem;
+    }
+    td {
+      padding: 2rem 0;
+    }
+    th:nth-child(1) {
+      width: 20%;
+    }
+    th:nth-child(2) {
+      width: 60%;
+    }
+    th:nth-child(3) {
+      width: 20%;
+    }
+    // Center the text inside the third column
+    th:nth-child(3),
+    tr td:nth-child(3) {
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  main {
+    table {
+      th:nth-child(1) {
+        width: 30%;
+      }
+      th:nth-child(2) {
+        width: 50%;
+      }
+      th:nth-child(3) {
+        width: 20%;
+      }
+    }
+  }
+}
+
+// Theme
+
+main {
+  background-color: v.$overlay-el-lvl-1-color;
+  box-shadow: v.$main-overlay-shadow;
+}
+
+table {
+  td {
+    border-top: 0.1rem solid rgba(240, 46, 170, 1);
+    padding: 2rem;
+  }
+}
+
+button {
+  color: v.$button-color;
+  border: none;
+  background: none;
+  cursor: pointer;
+  &:hover {
+    color: v.$button-on-hover-color;
+  }
+}
+
+input[type="text"] {
+  border: 0.2rem solid v.$button-color;
+  background-color: v.$primary-color;
+  color: v.$secondary-color;
+  &::placeholder {
+    color: v.$secondary-color;
+    opacity: 0.8;
+  }
+}
+
+@media screen and (max-width: 1290px) {
+  main {
+    box-shadow: v.$main-overlay-mq-shadow;
+  }
+}

@@ -1,0 +1,58 @@
+<main id="homepage">
+  <h1>Webbutveckling - Ramschema</h1>
+  <div class="input-box">
+    <label for="search">Sök:</label>
+    <input
+      id="search"
+      name="search"
+      type="text"
+      placeholder="Sök efter kurskod eller kursnamn"
+      [(ngModel)]="searchTerm"
+    />
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          <button id="course-code" (click)="alphabetizeCourseCode()">
+            Kurskod
+          </button>
+        </th>
+        <th>
+          <button id="course-name" (click)="alphabetizeCourseName()">
+            Namn
+          </button>
+        </th>
+        <th>
+          <button
+            id="course-progression"
+            (click)="alphabetizeCourseProgression()"
+          >
+            Progression
+          </button>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      @if(didFetchFail()){
+      <tr>
+        <td colspan="3">Något gick fel.</td>
+      </tr>
+      }@else if(filteredCourses()?.length === 0){
+      <tr>
+        <td colspan="3">Finns inga kurser att visa.</td>
+      </tr>
+      }@else if (filteredCourses() === undefined) {
+      <tr>
+        <td colspan="3">Laddar...</td>
+      </tr>
+      } @else { @for (course of filteredCourses(); track course.code) {
+      <tr>
+        <td>{{ course.code }}</td>
+        <td>{{ course.coursename }}</td>
+        <td>{{ course.progression }}</td>
+      </tr>
+      } }
+    </tbody>
+  </table>
+</main>

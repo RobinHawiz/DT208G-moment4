@@ -1,0 +1,72 @@
+@use "../abstracts/variables" as v;
+
+html {
+  font-size: 62.5%;
+}
+
+body,
+input[type="text"] {
+  font-family: "Didact Gothic", "Helvetica", "Arial", sans-serif;
+}
+
+h1 {
+  font-size: v.$h1-font;
+  font-weight: 400;
+}
+
+p {
+  font-size: v.$p-font;
+}
+
+table {
+  font-size: v.$p-font;
+}
+
+button {
+  text-decoration: underline;
+  font-size: v.$button-font;
+}
+
+label {
+  font-size: v.$p-font;
+  font-weight: 700;
+}
+
+input[type="text"] {
+  font-size: v.$p-font;
+  &::placeholder {
+    font-size: v.$p-font;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: v.$h1-mobile-font;
+    font-weight: 400;
+  }
+
+  p {
+    font-size: v.$p-mobile-font;
+  }
+
+  table {
+    font-size: v.$p-mobile-font;
+  }
+
+  button {
+    text-decoration: underline;
+    font-size: v.$button-mobile-font;
+  }
+
+  label {
+    font-size: v.$p-mobile-font;
+    font-weight: 700;
+  }
+
+  input[type="text"] {
+    font-size: v.$p-mobile-font;
+    &::placeholder {
+      font-size: v.$p-mobile-font;
+    }
+  }
+}

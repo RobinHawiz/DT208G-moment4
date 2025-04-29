@@ -1,0 +1,28 @@
+// Colors
+
+$primary-color: #17181a;
+$secondary-color: #f2f2f2;
+$overlay-el-lvl-1-color: rgba(255, 255, 255, 0.01);
+$button-color: rgb(240, 46, 170, 1);
+$button-on-hover-color: rgb(240, 46, 170, 0.8);
+
+// Shadows
+
+$main-overlay-shadow: rgba(240, 46, 170, 0.4) -5px 5px,
+  rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px,
+  rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
+
+$main-overlay-mq-shadow: rgba(240, 46, 170, 0.4) 0px 5px,
+  rgba(240, 46, 170, 0.3) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px,
+  rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px;
+
+// Font-sizes
+
+$h1-font: 4rem;
+$h1-mobile-font: 3rem;
+
+$p-font: 2rem;
+$p-mobile-font: 1.6rem;
+
+$button-font: 2rem;
+$button-mobile-font: 1.6rem;
